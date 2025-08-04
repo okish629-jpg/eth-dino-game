@@ -43,11 +43,12 @@ body {
     position: absolute;
     bottom: 0; /* Positioned at the bottom */
     left: 20px;
+    border-radius: 50%; /* Makes the element a circle */
 }
 
 #block {
-    width: 25px; /* <-- ADJUSTED SIZE */
-    height: 25px; /* <-- ADJUSTED SIZE */
+    width: 25px; 
+    height: 25px; 
     background-image: url("assets/obstacle.png");
     background-size: cover;
     position: absolute;

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETH Dino Game</title>
+    
+    <!-- Link to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="game">
+        <!-- UI Elements -->
+        <div id="score-container">SCORE: <span id="score">0</span></div>
+        <div id="high-score-container">HI: <span id="high-score">0</span></div>
+
+        <div id="game-over-message">
+            <p>GAME OVER</p>
+            <div id="final-scores">
+                <span>SCORE: <span id="final-score">0</span></span>
+                <span>HI: <span id="final-high-score">0</span></span>
+            </div>
+            <small>CLICK TO RESTART</small>
+        </div>
+
+        <!-- Game Elements -->
+        <div id="dino"></div>
+        <div id="block"></div>
+        <div id="coin"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

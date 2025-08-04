@@ -1,0 +1,135 @@
+/* --- Global Styles & Font Import --- */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #212121;
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* --- Game Container & Background --- */
+#game {
+    width: 600px;
+    height: 250px;
+    border: 2px solid black;
+    position: relative;
+    overflow: hidden; /* Crucial to hide elements outside the box */
+    
+    /* Scrolling Background */
+    background-image: url("assets/background.jpg");
+    background-size: 1200px 250px; /* Width is 2x container width */
+    animation: scroll-background 10s linear infinite;
+}
+
+@keyframes scroll-background {
+    0% { background-position: 0px 0; }
+    100% { background-position: -600px 0; }
+}
+
+
+/* --- Game Elements --- */
+#dino {
+    width: 50px;
+    height: 50px;
+    background-image: url("assets/eth.png");
+    background-size: cover;
+    position: absolute;
+    bottom: 0; /* Positioned at the bottom */
+    left: 20px;
+}
+
+#block {
+    width: 40px;
+    height: 40px;
+    background-image: url("assets/obstacle.png");
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    left: 600px; /* Start off-screen */
+    animation: move-element 2s linear infinite;
+}
+
+#coin {
+    width: 30px;
+    height: 30px;
+    background-image: url("assets/coin.png");
+    background-size: cover;
+    position: absolute;
+    bottom: 80px; /* Positioned higher to require a jump */
+    left: 600px;
+    animation: move-element 2.5s linear infinite;
+}
+
+/* --- Animations --- */
+.jump-animation {
+    animation: jump 0.5s ease;
+}
+
+@keyframes jump {
+    0% { bottom: 0; }
+    50% { bottom: 80px; }
+    100% { bottom: 0; }
+}
+
+@keyframes move-element {
+    0% { left: 600px; }
+    100% { left: -50px; } /* Move completely off-screen */
+}
+
+/* --- UI and Text Styles --- */
+#score-container, #high-score-container {
+    position: absolute;
+    top: 10px;
+    color: white;
+    text-shadow: 2px 2px #000000;
+    font-size: 16px;
+}
+#score-container { left: 10px; }
+#high-score-container { right: 10px; }
+
+
+#game-over-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid white;
+    /* Hidden by default */
+    display: none; 
+}
+
+#game-over-message p {
+    font-size: 2em;
+    margin: 0;
+    color: #ff4141; /* Red for 'Game Over' */
+}
+
+#final-scores {
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+#game-over-message small {
+    font-size: 0.8em;
+    color: #cccccc;
+    animation: blink 1.5s linear infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}

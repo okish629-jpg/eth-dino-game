@@ -46,8 +46,8 @@ body {
 }
 
 #block {
-    width: 40px;
-    height: 40px;
+    width: 25px; /* <-- ADJUSTED SIZE */
+    height: 25px; /* <-- ADJUSTED SIZE */
     background-image: url("assets/obstacle.png");
     background-size: cover;
     position: absolute;
